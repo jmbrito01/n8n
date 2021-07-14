@@ -53,13 +53,13 @@ export class BitCapitalAuthenticate implements INodeType {
 				form: {
 					grant_type: 'client_credentials',
 				},
-        json: true,
+				json: true,
 				uri: `${credentials.baseURL}/oauth/token`,
 			};
 
 
 			responseData = await this.helpers.request(options);
 			return [this.helpers.returnJsonArray(responseData)];
-      
+			
 	}
 }
