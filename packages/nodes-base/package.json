@@ -27,6 +27,8 @@
   ],
   "n8n": {
     "credentials": [
+      "dist/credentials/BitCapitalApi.credentials.js",
+
       "dist/credentials/ActionNetworkApi.credentials.js",
       "dist/credentials/ActiveCampaignApi.credentials.js",
       "dist/credentials/AgileCrmApi.credentials.js",
@@ -285,6 +287,8 @@
       "dist/credentials/ZulipApi.credentials.js"
     ],
     "nodes": [
+      "dist/nodes/BitCapital/BitCapitalAuthenticate.node.js",
+
       "dist/nodes/ActionNetwork/ActionNetwork.node.js",
       "dist/nodes/ActiveCampaign/ActiveCampaign.node.js",
       "dist/nodes/ActiveCampaign/ActiveCampaignTrigger.node.js",
