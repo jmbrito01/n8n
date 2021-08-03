@@ -40,7 +40,7 @@ export class BitCapitalGetUser implements INodeType {
 							required: true,
 							displayName: 'Access Token',
 							description: 'The Access Token of the current session',
-              default: '',
+							default: '',
 					},
 					{
 						name: 'userId',
@@ -48,7 +48,7 @@ export class BitCapitalGetUser implements INodeType {
 						required: true,
 						displayName: 'User ID',
 						description: 'The UUID of the user to get the informations from',
-            default: '',
+						default: '',
 				},
 			],
 	};

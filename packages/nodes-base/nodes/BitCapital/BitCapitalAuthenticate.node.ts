@@ -18,7 +18,7 @@ export class BitCapitalAuthenticate implements INodeType {
 			displayName: 'BitCapital Authenticate',
 			name: 'bitCapitalAuthenticate',
 			icon: 'file:bitcapital.svg',
-			group: ['transform'],
+			group: ['bitcapital'],
 			version: 1,
 			description: 'Authenticate in BitCapital API',
 			defaults: {
