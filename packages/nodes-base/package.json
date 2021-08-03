@@ -288,7 +288,7 @@
     "nodes": [
       "dist/nodes/BitCapital/BitCapitalAuthenticate.node.js",
       "dist/nodes/BitCapital/BitCapitalGetUser.node.js",
-
+      "dist/nodes/BitCapital/BitCapitalRequest.node.js",
       "dist/nodes/ActionNetwork/ActionNetwork.node.js",
       "dist/nodes/ActiveCampaign/ActiveCampaign.node.js",
       "dist/nodes/ActiveCampaign/ActiveCampaignTrigger.node.js",
@@ -635,6 +635,7 @@
     "change-case": "^4.1.1",
     "cheerio": "1.0.0-rc.6",
     "cron": "^1.7.2",
+    "crypto-js": "^4.0.0",
     "eventsource": "^1.0.7",
     "fflate": "^0.7.0",
     "formidable": "^1.2.1",
