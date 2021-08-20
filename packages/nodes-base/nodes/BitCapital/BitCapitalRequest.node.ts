@@ -73,6 +73,14 @@ export class BitCapitalRequest implements INodeType {
 				description: 'The HTTP request method to be used',
 				default: '',
 			},
+			{
+				name: 'idempotencyKey',
+				type: 'string',
+				required: false,
+				displayName: 'Idempotency Key',
+				description: 'A key to be sent as the idempotency key (very important if retries are enabled)',
+				default: '',
+			},
 		],
 	};
 
@@ -96,6 +104,7 @@ export class BitCapitalRequest implements INodeType {
 					'Accept': 'application/json',
 					'Authorization': `Bearer ${this.getNodeParameter('accessToken', 0)}`,
 					'Content-Type': 'application/json',
+					'X-Idempotence-Key': this.getNodeParameter('idempotencyKey', 0),
 					...headers,
 				},
 				method, body,
@@ -109,7 +118,7 @@ export class BitCapitalRequest implements INodeType {
 }
 
 
-import * as CryptoJS from 'crypto-js';
+import * as crypto from 'crypto';
 
 export interface RequestSigningHeaders {
 	'X-Request-Signature': string;
@@ -134,7 +143,9 @@ export class RequestUtil {
 		}
 
 		// Generate signature using HMAC SHA 256
-		const signature = CryptoJS.HmacSHA256(payload.join(','), secret);
+		const hmac = crypto.createHmac('sha256', secret);
+		hmac.update(payload.join(','));
+		const signature = hmac.digest('hex');
 
 		return {
 			'X-Request-Signature': signature.toString(),
